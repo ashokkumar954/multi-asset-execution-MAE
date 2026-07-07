@@ -1,0 +1,28 @@
+{
+  "format": 1,
+  "product": "19.5.0",
+  "properties": [
+    { "name": "asset_number", "type": "string", "title": "Asset Number" }
+  ],
+  "pluginAppsObj":[
+    {
+      "name" : "Ext",
+      "type" : "oauth_user_assertion",
+      "key" : "fusionOAuthUserAssertionApplication",
+      "comment" : "External: FFS application calling REST APIs via OAuth from OFSC. Application name: 'Concentric - Oracle Fusion Applications - User Asserted'"
+    },
+
+    {
+      "name" : "Int",
+      "type" : "ofs",
+      "key" : "ofsApiApplication",
+      "comment" : "Internal: Field Service APIs. Application name: 'App CX Service'"
+    }
+
+  ],
+  "plugin": {
+    "label": "bulk_health_metrics",
+    "lang": "en",
+    "val": "Multi-Asset Execution (MAE)"
+  }
+}

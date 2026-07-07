@@ -1,0 +1,59 @@
+<!-- src/js/views/asset.html -->
+<div class="bhm-plugin">
+
+  <!-- ── Sticky header (always visible) ── -->
+  <header class="bhm-hdr">
+    <div class="bhm-hdr-brand">
+      <div class="bhm-hdr-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.8"
+             stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 7V5a2 2 0 0 0-4 0v2"/>
+          <path d="M8 7V5a2 2 0 0 1 4 0"/>
+          <line x1="12" y1="12" x2="12" y2="16"/>
+          <line x1="10" y1="14" x2="14" y2="14"/>
+        </svg>
+      </div>
+      <div>
+        <div class="bhm-hdr-company">Concentric</div>
+        <div class="bhm-hdr-title">Multi-Asset Execution</div>
+        <div class="bhm-hdr-sub" data-bind="text: problemCodeCount() + ' asset(s) loaded'"></div>
+      </div>
+    </div>
+    <!-- Back button — only shown in asset list view -->
+    <button class="bhm-back-btn" data-bind="click: goBack, visible: showAllAssets">
+      &#8592; Back
+    </button>
+  </header>
+
+  <!-- ── LANDING VIEW ── -->
+  <div data-bind="ifnot: showAllAssets">
+    <div class="bhm-page">
+      <div class="bhm-card bhm-landing-card">
+        <div class="bhm-sec-title">
+          <div class="bhm-sec-bar"></div>
+          <div>
+            Asset Service Management
+            <div class="bhm-sec-sub">Assets loaded for this customer</div>
+          </div>
+        </div>
+        <button class="btn-submit btn-full" data-bind="click: navigateToAllAssets">
+          View Assets Associated to this Customer &#x2192;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ALL ASSETS INLINE VIEW ── -->
+  <div data-bind="if: showAllAssets" style="width:100%;">
+    <div class="bhm-page">
+      <div id="all-assets-inline-container">
+        <div class="bhm-empty">Loading asset details&hellip;</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Toast notification -->
+<div class="bhm-toast" id="bhm-toast"></div>

@@ -1,0 +1,9 @@
+node_modules
+build/
+web/
+
+# Claude memory files — never push to GitHub
+.claude/
+memory/
+MEMORY.md
+**/memory/*.md
